@@ -1,5 +1,5 @@
 <?php
-function open($database) {
+function opendatabase($database) {
     $servername = "localhost"; 
     $username = "root";     
     $password = "";     
@@ -32,7 +32,7 @@ function open($database) {
 
 
 $database = "your data base name";
-$tables = open($database);
+$tables = opendatabase($database);
 
 foreach ($tables as $table) {
     echo $table . "<br>";
