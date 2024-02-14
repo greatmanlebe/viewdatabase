@@ -1,13 +1,12 @@
 <?php
-function opendatabase($database, $password, $username, $servername ) {
-   $conn = new mysqli($servername, $username, $password, $database);
+function opendatabase($database, $password, $username, $servername, $port ) {
+   $conn = new mysqli($servername, $username, $password, $database, $port);
 
  if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     $tables = array();
-
-    
+     
     $query = "SHOW TABLES";
     $result = $conn->query($query);
 
@@ -25,7 +24,8 @@ $database = "your data base name";
 $password = "put your data base password";
 $username = "enter your user name";
 $servername ="enter your server name";
-$tables = opendatabase($database, $password, $username,   $servername );
+$port ="enter your port";
+$tables = opendatabase($database, $password, $username, $servername, $port );
 
 foreach ($tables as $table) {
     echo $table . "<br>";
