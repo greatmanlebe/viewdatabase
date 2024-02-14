@@ -1,8 +1,8 @@
 <?php
-function opendatabase($database) {
+function opendatabase($database, $password) {
     $servername = "localhost"; 
     $username = "root";     
-    $password = "";     
+         
  $conn = new mysqli($servername, $username, $password, $database);
 
  if ($conn->connect_error) {
@@ -31,8 +31,9 @@ function opendatabase($database) {
 
 
 
-$database = "your data base name";
-$tables = opendatabase($database);
+$database = "information_schema";
+$password = "";
+$tables = opendatabase($database, $password);
 
 foreach ($tables as $table) {
     echo $table . "<br>";
