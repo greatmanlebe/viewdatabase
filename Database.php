@@ -1,4 +1,5 @@
 <?php
+
 function opendatabase($database, $password) {
     $servername = "localhost"; 
     $username = "root";     
@@ -31,8 +32,8 @@ function opendatabase($database, $password) {
 
 
 
-$database = "information_schema";
-$password = "";
+$database = "your data base name";
+$password = "put your data base password";
 $tables = opendatabase($database, $password);
 
 foreach ($tables as $table) {
